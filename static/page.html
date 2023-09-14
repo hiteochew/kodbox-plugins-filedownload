@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <title><?php echo $fileinfo["name"]; ?></title>
+    <meta itemprop="image" content="<?php echo $this->pluginHost;?>static/images/icon.png" />
+	<link href="<?php echo $this->pluginHost;?>static/images/icon.png" rel="Shortcut Icon" type="image/x-icon">
+	<link href="<?php echo $this->pluginHost;?>static/images/icon.png" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo $this->config['settings']['staticPath'];?>style/dist/main.css?v=1.43.01" type="text/css" />
+
+    <style>
+    html, body {width: 100%;height: 100%;margin: 0;padding: 0;overflow: hidden;position: relative;box-sizing: border-box;}
+    body {display: flex;justify-content: center;align-items: center;text-align: center;font-size: 16px;line-height: 2;}
+    .file-viewer{position: relative;box-sizing: border-box;}
+    .file-viewer .file-ico {width: 5rem;height: 5rem;font-size: 1rem;display: inline-block;text-align: center;vertical-align: text-bottom;}
+    .file-viewer .file-name{margin: 5px 0.5rem;line-height: 1.75;white-space: nowrap;text-overflow: ellipsis;word-break: keep-all;overflow: hidden;max-width: 15rem;}
+    .file-viewer .file-btn{margin:1rem 0 0.8rem;}
+    .file-viewer .file-btn a{padding: 0.6rem 1.5rem;background: #3e94ff5e;color: #3998ff;font-size: 0.9em;border-radius: 1rem;}
+    .file-viewer .file-btn a:hover{filter: brightness(1.28);}
+    </style>
+</head>
+<body>
+    <div class="file-viewer">
+        <div class="file-icon"><i class="file-ico name-<?php echo $fileinfo['ext']; ?>"><i class="x-item-icon x-<?php echo $fileinfo['ext']; ?>"></i></i></div>
+        <p class="file-name"><?php echo $fileinfo["name"]; ?></p>
+        <div class="file-btn"><a class="btn" href="<?php echo $fileinfo['url']; ?>"><i class="font-icon ri-download-line-2"></i>下载</a></div>
+    </div>
+</body>
+</html>
